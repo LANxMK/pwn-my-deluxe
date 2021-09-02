@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <head>
+	<title>Manticore</title>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link rel="apple-touch-icon" sizes="167x167" href="images/manticore-icon.png">
-	<title>Manticore</title>	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="css/framework7-icons.css" rel="stylesheet">
-	<link rel='stylesheet' href='css/slidetounlock.css'>  	
 	<link rel='stylesheet' href='css/style.css'>  	
-	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
-	<script src='js/slidetounlock.js'></script>
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="/js/exploits/14.5.js"></script>
 </head>
 <body class="start goon">
 	<div class="wrap">
@@ -44,7 +38,6 @@
 		</section>
 		<section class="content">
 			<div class="wrap">
-				<!--<img src="images/manticore.png" class="logo">-->
 				<div id="interact">
 					<div id="jbButton" class="exploitButton" onclick="pwnMe(); $(this).addClass('clicked');">
 						<div class="header"><div class="title"><p>Jailbreak</p><p>status</p></div></div>
@@ -59,40 +52,61 @@
 				<div class="content"></div>
 			</div>
 			<div class="options">
-				<div class="head">
-					<div class="button"><i class="f7-icons">chevron_left</i><p>Options</p></div>
-				</div>
-				<div class="content">
-					<div class="managers">
-						<div class="title"><p>Package Management</p></div>
-						<div class="wrap">
-							<div class="manager" data-manager="managerCydia">
-								<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
-								<div class="wrap-title"><p class="title">Cydia</p></div>
-								<div class="wrap-toggle"><div class="toggle"></div></div>
-							</div>
-							<div class="manager active" data-manager="managerSileo">
-								<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
-								<div class="wrap-title"><p class="title">Sileo</p></div>
-								<div class="wrap-toggle"><div class="toggle"></div></div>
-							</div>
-							<div class="manager" data-manager="managerZebra">
-								<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
-								<div class="wrap-title"><p class="title">Zebra</p></div>
-								<div class="wrap-toggle"><div class="toggle"></div></div>
-							</div>
-							<div class="manager" data-manager="managerSaily">
-								<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
-								<div class="wrap-title"><p class="title">Saily</p></div>
-								<div class="wrap-toggle"><div class="toggle"></div></div>
+				<section class="main active">
+					<div class="wrap">
+						<div class="head">
+							<div class="button"><i class="f7-icons">chevron_left</i><p>Options</p></div>
+						</div>
+						<div class="content">
+							<div class="top">
+								<div class="title"><p>Package Management</p></div>
+								<div class="wrap">
+									<div class="manager" data-manager="managerCydia">
+										<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
+										<div class="wrap-title"><p class="title">Cydia</p></div>
+										<div class="wrap-toggle"><div class="toggle"></div></div>
+									</div>
+									<div class="manager active" data-manager="managerSileo">
+										<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
+										<div class="wrap-title"><p class="title">Sileo</p></div>
+										<div class="wrap-toggle"><div class="toggle"></div></div>
+									</div>
+									<div class="manager" data-manager="managerZebra">
+										<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
+										<div class="wrap-title"><p class="title">Zebra</p></div>
+										<div class="wrap-toggle"><div class="toggle"></div></div>
+									</div>
+									<div class="manager" data-manager="managerSaily">
+										<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
+										<div class="wrap-title"><p class="title">Saily</p></div>
+										<div class="wrap-toggle"><div class="toggle"></div></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</section>
+				<section class="sub">
+					<div class="wrap">
+						<div class="head">
+							<div class="button"><i class="f7-icons">chevron_left</i><p>Themes</p></div>
+						</div>
+						<div class="content">
+							<div class="top">
+								<div class="title"><p>sussy baka themes store</p></div>
+								<div class="wrap"></div>
+							</div>
+							<div class="info"></div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</section>
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/exploits/14.5.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
-</html>1
+</html>

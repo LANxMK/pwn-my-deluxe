@@ -77,10 +77,12 @@ const appHeight = () => {
     doc.style.setProperty("--app-height", `${window.innerHeight}px`);
     doc.style.setProperty("--app-height-neg", `-${window.innerHeight}px`);
     doc.style.setProperty("--app-width", `${window.innerWidth}px`);
+    doc.style.setProperty("--app-width-neg", `-${window.innerWidth}px`);
 };
 
 window.addEventListener("resize", appHeight);
 appHeight();
+
 
 // window.onload = () => {
 //	//force redirect to https
@@ -170,7 +172,7 @@ $(document).ready(function() {
         $('section.content').removeClass('hidden');
     });
 
-    $('section.info .options .head .button').bind('click', function(ev) {
+    $('section.info .options .main .head .button').bind('click', function(ev) {
         console.log('pushed .button');
         $('section.info .options').removeClass("active");
         $('body').removeClass("options");
@@ -178,10 +180,21 @@ $(document).ready(function() {
         $('section.content').removeClass('hidden');
     });
 
-    //* Options - Select Manager
-    $('.manager').click(function() {
-        if ($('.manager').hasClass('active')) {
-            $('.manager').removeClass('active');
+    $('section.info .options .sub .head .button').bind('click', function(ev) {
+        console.log('pushed .button on .sub');
+        $('.options section').removeClass('active');
+        $('.options section.main').addClass('active');
+    });
+
+    $('section.info .options .sub').swiperight(function(e) {
+        console.log('pushed .button on .sub');
+        $('.options section').removeClass('active');
+        $('.options section.main').addClass('active');
+    });
+    // Options - Select Manager
+    $('section.info .top .wrap .theme').click(function() {
+        if ($('section.info .top .wrap .theme').hasClass('active')) {
+            $('section.info .top .wrap .theme').removeClass('active');
         };
         $(this).addClass('active');
     });
@@ -199,12 +212,48 @@ $(document).ready(function() {
             { name: 'EGG', bg: '#9e9e9e', color: 'white' }
         ],
         themes: [
-            { name: 'default'},
-            { name: 'really-dark'},
-            { name: 'manti'},
-            { name: 'goon'},
-            { name: 'viola'},
-            { name: 'sus'}
+            {
+                title: 'Default',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'really-dark',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Manti',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Goon',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Viola',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'sus',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Blurple',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                color: '#fff',
+            },
         ],
         settings: [
             { area: 'tweaks'},
@@ -212,7 +261,8 @@ $(document).ready(function() {
         ],
         managers: [{
                 title: 'Cydia',
-                bg: 'url("https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png")',
+                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
                 color: '#fff',
             },
             {
@@ -290,7 +340,7 @@ $(document).ready(function() {
         settings.map((setting) => {
             html += `<div class="section ${setting.area}"></div>`;
         })
-        $('section.info .options .content').append(html);
+        $('section.info .options .main .content').append(html);
     };
 
     //Set sub-category items - options
@@ -304,23 +354,60 @@ $(document).ready(function() {
 	        </div>
 	        <div class="seperator"></div>`;
         });
-        $('section.info .options .content .tweaks').append(html);
-        $("section.info .options .content .tweaks").children(".seperator:last-child").remove();
+        $('section.info .options .main .content .tweaks').append(html);
+        $("section.info .options .main .content .tweaks").children(".seperator:last-child").remove();
     };
 
     //Set category items - themes
     $(document).ready(function() {
-        $('section.info .options .content .section.themes').append(`
-            <div class="theme" data-tweak="themes"> 
+        $('section.info .options .main .content .section.themes').append(`
+            <div class="theme" data-tweak="themes" onclick="themesOption();"> 
                 <div class="wrap-icon"><div class="icon" style="background: #FF910B;"><i class="f7-icons" style="color: white;">paintbrush_fill</i></div></div>
                 <div class="wrap-title"><p class="title">Themes</p></div>
                 <div class="wrap-toggle"><div class="toggle"><div class="arrow"><i class="f7-icons">chevron_right</i></div><div class="switch"></div></div></div>
             </div>`
         );
     });
+    //Set sub-category items - options
+    function themes(themes) {
+        let html = '';
+        themes.map((theme) => {
+            html += `<div class="theme" data-theme="${'theme' + sanearString(theme.title)}" onclick="themesSelect(); $(this).addClass('active')">
+	            <div class="wrap-icon"><div class="icon" style="background: ${theme.icon};"><i class="f7-icons" style="color: ${theme.color};">${theme.icon}</i></div></div>
+                <div class="wrap-bg"><div class="bg" style="background: ${theme.bg};"><i class="f7-icons" style="color: ${theme.color};">${theme.bg}</i></div></div>
+	            <div class="wrap-title"><p class="title">${theme.title}</p></div>
+	        </div>`;
+        });
+        $('section.info .options .sub .top .wrap').append(html);
+    };
     settings(globalState.settings);
     tweaks(globalState.tweaks);
+    themes(globalState.themes);
     function sanearString(string) {
         return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '');
     };
 });
+
+// Options button functionality
+
+// Options - Themes
+function themesOption() { 
+    $('.options section').removeClass('active');
+    $('.options section.sub').addClass('active');
+    console.log('pushed themes option');
+};
+
+function themesSelect() { 
+    if ($('section.info .top .wrap > div').hasClass('active')) {
+        $('section.info .top .wrap > div').removeClass('active');
+    };
+
+    $('.sub .info').html('');
+
+    setTimeout(function() {
+        var activeTheme = $('.sub .theme.active').attr('data-theme');
+        $(activeTheme).addClass('test')
+        console.log(activeTheme);
+        $('[data-theme=' + activeTheme + ']').clone().appendTo( ".sub .info" );
+    }, 100);
+};
