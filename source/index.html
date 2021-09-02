@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="css/framework7-icons.css" rel="stylesheet">
 	<link rel='stylesheet' href='css/slidetounlock.css'>  	
 	<link rel='stylesheet' href='css/style.css'>  	
 	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
 	<script type="text/javascript" src="js/exploits/14.5.js"></script>
 	<script type="text/javascript" src="js/exploits/14.6.js"></script>
 </head>
-<body class="start really-dark">
+<body class="start goon">
 	<div class="wrap">
 		<section class="header">
 			<div class="wrap">
@@ -59,10 +60,40 @@
 				<div class="content"></div>
 			</div>
 			<div class="options">
-				<div class="head"><p>Options</p></div>
+				<div class="head">
+					<div class="button"><i class="f7-icons">chevron_left</i><p>Options</p></div>
+				</div>
+				<div class="content">
+					<div class="managers">
+						<div class="title"><p>Package Management</p></div>
+						<div class="wrap">
+							<div class="manager" data-manager="managerCydia">
+								<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
+								<div class="wrap-title"><p class="title">Cydia</p></div>
+								<div class="wrap-toggle"><div class="toggle"></div></div>
+							</div>
+							<div class="manager active" data-manager="managerSileo">
+								<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
+								<div class="wrap-title"><p class="title">Sileo</p></div>
+								<div class="wrap-toggle"><div class="toggle"></div></div>
+							</div>
+							<div class="manager" data-manager="managerZebra">
+								<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
+								<div class="wrap-title"><p class="title">Zebra</p></div>
+								<div class="wrap-toggle"><div class="toggle"></div></div>
+							</div>
+							<div class="manager" data-manager="managerSaily">
+								<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
+								<div class="wrap-title"><p class="title">Saily</p></div>
+								<div class="wrap-toggle"><div class="toggle"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
 </body>
-</html>
+</html>1
