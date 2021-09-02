@@ -13,37 +13,40 @@ function EasterEgg() {
 }
 
 
-async function pwnMe() {
-    if (location.protocol === "https:") {
-        if (
-            navigator.userAgent.includes("iPhone") ||
-            navigator.userAgent.includes("iPad")
-        ) {
-            if (navigator.userAgent.includes("Macintosh")) {
-                alert("MacOS is not supported");
-                return;
-            }
-
-            if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-                socket.emit("log_normal", "Starting exploitation for iOS 14.5");
-                await kickstart145();
-                return;
-            }
-
-            if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-                socket.emit("log_normal", "Starting exploitation for iOS 14.6");
-                await kickstart146();
-                return;
-            }
-        } else {
-            alert("Detected a unsupported version/device");
-            socket.emit("error", "Detected a unsupported version/device");
-            return;
-        }
-    } else {
-        document.getElementById("jbButton").disabled = true;
-        alert("exploitation only works over https");
-    }
+async function pwnMe() { 
+	if (location.protocol === "https:") {
+	  if (
+		navigator.userAgent.includes("iPhone") ||
+		navigator.userAgent.includes("iPad")
+	  ) {
+		if (navigator.userAgent.includes("Macintosh")) {
+		  alert("MacOS is not supported");
+		  return;
+		}
+		
+		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+		  socket.emit("log_normal", "Starting exploitation for iOS 14.5");
+		  await kickstart145();
+		  return;
+		}
+		
+		if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+		  socket.emit("log_normal", "Starting exploitation for iOS 14.6");
+		  var iframe = document.createElement("iframe");
+		  iframe.style.display = "none";
+		  iframe.src = "./pwn_14.6.html";
+		  document.body.appendChild(iframe);
+		  return;
+		}
+	  } else {
+		alert("Detected a unsupported version/device");
+		socket.emit("error", "Detected a unsupported version/device");
+		return;
+	  }
+	} else {
+	  document.getElementById("jbButton").disabled = true;
+	  alert("exploitation only works over https");
+	}
 };
 
 if (
