@@ -10,7 +10,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="css/framework7-icons.css" rel="stylesheet">
-	<link rel='stylesheet' href='css/style.css'>  	
+	<link rel='stylesheet' href='css/style.css'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
 <body class="start goon">
 	<div class="wrap">
@@ -60,26 +61,30 @@
 						<div class="content">
 							<div class="top">
 								<div class="title"><p>Package Management</p></div>
-								<div class="wrap">
-									<div class="manager" data-manager="managerCydia">
-										<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
-										<div class="wrap-title"><p class="title">Cydia</p></div>
-										<div class="wrap-toggle"><div class="toggle"></div></div>
-									</div>
-									<div class="manager active" data-manager="managerSileo">
-										<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
-										<div class="wrap-title"><p class="title">Sileo</p></div>
-										<div class="wrap-toggle"><div class="toggle"></div></div>
-									</div>
-									<div class="manager" data-manager="managerZebra">
-										<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
-										<div class="wrap-title"><p class="title">Zebra</p></div>
-										<div class="wrap-toggle"><div class="toggle"></div></div>
-									</div>
-									<div class="manager" data-manager="managerSaily">
-										<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
-										<div class="wrap-title"><p class="title">Saily</p></div>
-										<div class="wrap-toggle"><div class="toggle"></div></div>
+								<div class="items">
+									<div class="splide">
+										<div class="splide__track">
+											<ul class="splide__list">
+												<li class="splide__slide">
+													<div class="item manager" data-manager="managerCydia">
+														<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
+														<div class="wrap-title"><p class="title">Cydia</p></div>
+													</div>
+													<div class="item manager active" data-manager="managerSileo">
+														<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
+														<div class="wrap-title"><p class="title">Sileo</p></div>
+													</div>
+													<div class="item manager" data-manager="managerZebra">
+														<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
+														<div class="wrap-title"><p class="title">Zebra</p></div>
+													</div>
+													<div class="item manager" data-manager="managerSaily">
+														<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
+														<div class="wrap-title"><p class="title">Saily</p></div>
+													</div>
+												</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -94,7 +99,14 @@
 						<div class="content">
 							<div class="top">
 								<div class="title"><p>sussy baka themes store</p></div>
-								<div class="wrap"></div>
+								<div class="items">
+									<div class="splide">
+										<div class="splide__track">
+											<ul class="splide__list">
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="info"></div>
 						</div>
@@ -105,6 +117,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/js/exploits/14.5.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>

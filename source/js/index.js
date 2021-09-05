@@ -187,14 +187,20 @@ $(document).ready(function() {
     });
 
     $('section.info .options .sub').swiperight(function(e) {
-        console.log('pushed .button on .sub');
-        $('.options section').removeClass('active');
-        $('.options section.main').addClass('active');
+            //ignore swipe when scrolling through items
+
+        if($("section.info .options .sub .items:hover").length != 0){
+            console.log("Swiped inside, ingnoring");
+        } else{
+            console.log('Swiped outside');
+            $('.options section').removeClass('active');
+            $('.options section.main').addClass('active');
+        }
     });
     // Options - Select Manager
-    $('section.info .top .wrap .theme').click(function() {
-        if ($('section.info .top .wrap .theme').hasClass('active')) {
-            $('section.info .top .wrap .theme').removeClass('active');
+    $('section.info .items .item').click(function() {
+        if ($('section.info .items .item').hasClass('active')) {
+            $('section.info .items .item').removeClass('active');
         };
         $(this).addClass('active');
     });
@@ -213,45 +219,75 @@ $(document).ready(function() {
         ],
         themes: [
             {
-                title: 'Default',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                title: 'Manticore',
+                icon: 'url(images/themes/manticore-ico.png)',
+                bg: 'url(images/themes/manticore-screen.png)',
                 color: '#fff',
             },
             {
-                title: 'really-dark',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                color: '#fff',
-            },
-            {
-                title: 'Manti',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                title: 'Gooned',
+                icon: 'url(images/themes/gooned-ico.png)',
+                bg: 'url(images/themes/gooned-screen.png)',
                 color: '#fff',
             },
             {
                 title: 'Goon',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                icon: 'url(images/themes/goon-ico.png)',
+                bg: 'url(images/themes/goon-screen.png)',
                 color: '#fff',
             },
             {
-                title: 'Viola',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                title: 'Nord',
+                icon: 'url(images/themes/nord-ico.png)',
+                bg: 'url(images/themes/nord-screen.png)',
                 color: '#fff',
             },
             {
-                title: 'sus',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                title: 'Water',
+                icon: 'url(images/themes/water-ico.png)',
+                bg: 'url(images/themes/water-screen.png)',
                 color: '#fff',
             },
             {
-                title: 'Blurple',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                title: 'Earth',
+                icon: 'url(images/themes/earth-ico.png)',
+                bg: 'url(images/themes/earth-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Grass',
+                icon: 'url(images/themes/grass-ico.png)',
+                bg: 'url(images/themes/grass-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Fire',
+                icon: 'url(images/themes/fire-ico.png)',
+                bg: 'url(images/themes/fire-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Coal',
+                icon: 'url(images/themes/coal-ico.png)',
+                bg: 'url(images/themes/coal-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Iron',
+                icon: 'url(images/themes/iron-ico.png)',
+                bg: 'url(images/themes/iron-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Pudding',
+                icon: 'url(images/themes/pudding-ico.png)',
+                bg: 'url(images/themes/pudding-screen.png)',
+                color: '#fff',
+            },
+            {
+                title: 'Cherry Pop',
+                icon: 'url(images/themes/cherry-ico.png)',
+                bg: 'url(images/themes/cherry-screen.png)',
                 color: '#fff',
             },
         ],
@@ -261,8 +297,8 @@ $(document).ready(function() {
         ],
         managers: [{
                 title: 'Cydia',
-                icon: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
-                bg: 'url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png)',
+                icon: 'url(images/themes/manticore-ico.png)',
+                bg: 'url(images/themes/manticore-screen.png)',
                 color: '#fff',
             },
             {
@@ -319,7 +355,10 @@ $(document).ready(function() {
                 icon: 'hourglass',
                 bg: '',
             },
-        ]
+        ],
+        wrapperThemes: {
+            themesGroup: 4,
+        },
     };
 
     //Insert badges
@@ -370,15 +409,24 @@ $(document).ready(function() {
     });
     //Set sub-category items - options
     function themes(themes) {
+        globalState.wrapperThemes.groups = Math.ceil(themes.length / globalState.wrapperThemes.themesGroup);
+        let themeCount = 1;
         let html = '';
         themes.map((theme) => {
-            html += `<div class="theme" data-theme="${'theme' + sanearString(theme.title)}" onclick="themesSelect(); $(this).addClass('active')">
-	            <div class="wrap-icon"><div class="icon" style="background: ${theme.icon};"><i class="f7-icons" style="color: ${theme.color};">${theme.icon}</i></div></div>
-                <div class="wrap-bg"><div class="bg" style="background: ${theme.bg};"><i class="f7-icons" style="color: ${theme.color};">${theme.bg}</i></div></div>
+            if (themeCount == 1) html += '<div class="splide__slide">';
+            html += `<div class="item theme" data-theme="${'theme' + sanearString(theme.title)}" onclick="themesSelect(); $(this).addClass('active')">
+	            <div class="wrap-icon"><div class="icon" style="background: ${theme.icon};"><i class="f7-icons" style="color: ${theme.color};"></i></div></div>
+                <div class="wrap-bg"><div class="bg" style="background: ${theme.bg};"><i class="f7-icons" style="color: ${theme.color};"></i></div></div>
 	            <div class="wrap-title"><p class="title">${theme.title}</p></div>
 	        </div>`;
+            if (themeCount == globalState.wrapperThemes.themesGroup) {
+                html += '</div>';
+                themeCount = 1;
+                return false;
+            }
+            theme.type == 'theme' ? themeCount = themeCount + 4 : themeCount++;
         });
-        $('section.info .options .sub .top .wrap').append(html);
+        $('section.info .options .sub .top .items .splide__list').append(html);
     };
     settings(globalState.settings);
     tweaks(globalState.tweaks);
@@ -398,8 +446,8 @@ function themesOption() {
 };
 
 function themesSelect() { 
-    if ($('section.info .top .wrap > div').hasClass('active')) {
-        $('section.info .top .wrap > div').removeClass('active');
+    if ($('section.info .items .item').hasClass('active')) {
+        $('section.info .items .item').removeClass('active');
     };
 
     $('.sub .info').html('');
@@ -408,6 +456,10 @@ function themesSelect() {
         var activeTheme = $('.sub .theme.active').attr('data-theme');
         $(activeTheme).addClass('test')
         console.log(activeTheme);
-        $('[data-theme=' + activeTheme + ']').clone().appendTo( ".sub .info" );
+        $('[data-theme=' + activeTheme + '] >').clone().appendTo( ".sub .info" );
     }, 100);
 };
+setTimeout(function() {
+    new Splide( '.main .splide' ).mount();
+    new Splide( '.sub .splide' ).mount();
+}, 100);

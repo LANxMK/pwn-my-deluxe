@@ -390,7 +390,7 @@ section.content > .wrap {
     width: 100%;
 }
 
-section.content > .wrap > div {
+section.content > .items .item {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -398,6 +398,7 @@ section.content > .wrap > div {
     align-items: center;
     height: 300px;
     width: calc(100% - 42px);
+    scroll-snap-align: start;
 }
 
 .exploitButton {
@@ -522,33 +523,32 @@ section.info .options.active {
     width: calc(120% + 24px);
     left: calc(-10% - 12px);
     height: calc(var(--app-height) - 20vw - 2vw);
-    margin-bottom: calc(var(--app-height-neg) + 20vw);
+    margin-bottom: calc(var(--app-height-neg) + 20vw + 2vw);
     background: var(--app-color-bg-3);
     border-radius: 48px 48px 0 0;
     transition: 0.5s, border-radius 0.5s;
-    padding: 24px 0;
 }
 
 section.info .options > section {
     display: flex;
     position: relative;
     flex-direction: row;
-    height: 100%;
+    height: calc(100% - 24px);
     min-width: 100%;
-
+    align-items: center;
+    justify-content: center;
 }
 
 section.info .options > section > .wrap {
     display: flex;
     position: relative;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 48px);
     width: 100%;
 }
 
 section.info .options .main {
-    position: absolute;
-    padding: 24px 0;
+    position: relative;
     top: 0%;
     left: calc(var(--app-width-neg) / 2);
     opacity: 0;
@@ -562,21 +562,19 @@ section.info .options .main.active {
 }
 
 section.info .options .sub {
-    position: absolute;
+    position: relative;
     top: 0%;
-    left: var(--app-width);
-    height: 100%;
+    left: 0%;
+    height: calc(100% - 24px);
     width: 100%;
-    padding: 24px 0;
     transition: 0.5s;
 }
 
 section.info .options .sub.active {
-    position: absolute;
+    position: relative;
     top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;;
+    left: -100%;
+    width: 100%;
     transition: 0.5s;
 }
 
@@ -669,6 +667,7 @@ section.info .content {
     justify-content: flex-start;
     opacity: 0;
     transition: 0.5s;
+    flex-wrap: nowrap;
 }
 
 section.info .options.active .content {
@@ -681,9 +680,6 @@ section.info .options.active .content {
 }
 
 /* Settings Content */
-section.info .content > div {
-    margin-bottom: 12px;
-}
 section.info .top .title {
     width: 100%;
     height: fit-content;
@@ -711,42 +707,21 @@ section.info .top {
     margin-bottom: 12px;
 }
 
-section.info .top .wrap {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 12px;
-    flex-direction: row;
-    align-items: start;
-    height: fit-content;
-    width: calc(100% - 48px);
-    padding: 18px;
-    margin-bottom: 0px;
-    flex-wrap: wrap;
-    justify-items: center;
-    justify-content: space-around;
+section.info .top .items {
+    height: 115px;
+    width: calc(var(--app-width) - 25%);
 }
 
-section.info .top .wrap > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-
-}
-
-section.info .top .wrap > div .wrap-icon {
+section.info .top .items .item .wrap-icon {
     position: relative;
-    height: 4em;
-    width: 4em;
+    height: 64px;
+    width: 64px;
     transform: scale(1);
     transition: 0.5s;
 }
 
 
-section.info .top .wrap > div .wrap-icon::before {
+section.info .top .items .item .wrap-icon::before {
     content: '';
     position: absolute;
     top: 0%;
@@ -759,7 +734,7 @@ section.info .top .wrap > div .wrap-icon::before {
 }
 
 
-section.info .top .wrap > div.active .wrap-icon::before {
+section.info .top .items .item.active .wrap-icon::before {
     content: '';
     position: absolute;
     top: -5%;
@@ -771,7 +746,7 @@ section.info .top .wrap > div.active .wrap-icon::before {
     transition: 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-section.info .top .wrap > div .wrap-icon .icon{
+section.info .top .items .item .wrap-icon .icon{
     position: relative;
     background-size: contain !important;
     background-repeat: no-repeat !important;
@@ -785,12 +760,12 @@ section.info .top .wrap > div .wrap-icon .icon{
 }
 
 
-section.info .top .wrap > div.active .wrap-icon .icon{
+section.info .top .items .item.active .wrap-icon .icon{
     transform: scale(0.9);
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-section.info .top .wrap > div .wrap-title {
+section.info .top .items .item .wrap-title {
     margin: 6px 0px;
     display: none;
 }
@@ -803,6 +778,7 @@ section.info .section {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    margin-bottom: 12px;
 }
 
 section.info .section > :not(.seperator) {
@@ -892,18 +868,16 @@ section.info .sub .info {
     background: var(--app-color-bg-2);
     border-radius: 12px;
     width: 80%;
-    height: 300px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
 }
 
-section.info .sub .info .wrap-icon {
-    display: none;
-}
-
-section.info .sub .wrap .info .wrap-icon {
+section.info .sub .items .item .wrap-bg,
+section.info .sub .items .info .wrap-icon {
     display: none;
 }
 
@@ -915,7 +889,61 @@ section.info .sub .info .bg  {
     height: 100%;
     width: 100%;
     display: block;
-    background-size: cover !important;
+    background-size: none !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+}
+
+section.info .sub .info .wrap-title {
+    position: absolute;
+    bottom: 24px;
+}
+
+/* Splide Config */
+.splide {
+    position: relative;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splide__track {
+    position: relative;
+    z-index: 0;
+    height: 100%;
+    width: calc(var(--app-width) - 25%);
+    bottom: 6px;
+}
+
+.splide__list {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: calc(var(--app-width) - 25%);
+    justify-content: flex-start;
+}
+
+.splide__slide {
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.splide__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: .5em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+}
+.splide__arrows {
+    display: none;
 }
