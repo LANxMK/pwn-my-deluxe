@@ -1,35 +1,7 @@
 /* Manticore Web - DELUXE */
 
 /* Themes */
-    .default {
-        --app-color-bg: #4d4d4d;
-        --app-color-bg-2: #cccccc;
-        --app-color-bg-3: #666666;
-        --app-color-txt: #e5e5e5;
-        --app-color-txt-2: #333333;
-        --app-color-txt-3: #333333;
-        --app-color-title: #e5e5e5;
-        --app-color-border: #333333;
-        --app-color-logo: white;
-        --app-color-line: white;
-        --app-color-button: #cccccc;
-    }
-
-    .really-dark {
-        --app-color-bg: #ffffff;
-        --app-color-bg-2: #cccccc;
-        --app-color-bg-3: #ebebeb;
-        --app-color-txt: #666666;
-        --app-color-txt-2: #333333;
-        --app-color-txt-3: #333333;
-        --app-color-title: #333333;
-        --app-color-border: #cccccc;
-        --app-color-logo: #666666;
-        --app-color-line: #333333;
-        --app-color-button: #ebebeb;
-    }
-
-    .manti {
+    .Manticore {
         --app-color-bg: #000000;
         --app-color-bg-2: #1F2020;
         --app-color-bg-3: #0D0D0D;
@@ -43,7 +15,7 @@
         --app-color-button: #202020;
     }
 
-    .goon {
+    .Gooned {
         --app-color-bg: #2b313c;
         --app-color-bg-2: #444c5e;
         --app-color-bg-3: #343a47;
@@ -57,21 +29,22 @@
         --app-color-button: #3c4352;
     }
 
-    .viola {
-        --app-color-bg: #1c1b29;
-        --app-color-bg-2: #343355;
-        --app-color-bg-3: #292841;
-        --app-color-txt: #393b59;
-        --app-color-txt-2: #5d608d;
-        --app-color-txt-3: #5d608d;
-        --app-color-title: #5d608d;
-        --app-color-border: #393b59;
-        --app-color-logo: #4e5177;
-        --app-color-line: #5d608d;
-        --app-color-button: #292841;
+    .Goon {
+        --app-color-bg: #2b313c;
+        --app-color-bg-2: #444c5e;
+        --app-color-bg-3: #343a47;
+        --app-color-txt: #6c758b;
+        --app-color-txt-2: #abb6d1;
+        --app-color-txt-3: #abb6d1;
+        --app-color-title: #abb6d1;
+        --app-color-border: #444c5e;
+        --app-color-logo: #abb6d1;
+        --app-color-line: #abb6d1;
+        --app-color-button: #3c4352;
     }
 
-    .sus {
+
+    .CherryPop {
         --app-color-bg: #942a2a;
         --app-color-bg-2: #d54242;
         --app-color-bg-3: #b93737;
@@ -83,6 +56,34 @@
         --app-color-logo: #eb4d4d;
         --app-color-line: #eb4d4d;
         --app-color-button: #b93737;
+    }
+
+    .Coal {
+        --app-color-bg: #4d4d4d;
+        --app-color-bg-2: #cccccc;
+        --app-color-bg-3: #666666;
+        --app-color-txt: #e5e5e5;
+        --app-color-txt-2: #333333;
+        --app-color-txt-3: #333333;
+        --app-color-title: #e5e5e5;
+        --app-color-border: #333333;
+        --app-color-logo: white;
+        --app-color-line: white;
+        --app-color-button: #cccccc;
+    }
+
+    .Iron {
+        --app-color-bg: #ffffff;
+        --app-color-bg-2: #cccccc;
+        --app-color-bg-3: #ebebeb;
+        --app-color-txt: #666666;
+        --app-color-txt-2: #333333;
+        --app-color-txt-3: #333333;
+        --app-color-title: #333333;
+        --app-color-border: #cccccc;
+        --app-color-logo: #666666;
+        --app-color-line: #333333;
+        --app-color-button: #ebebeb;
     }
 /* */
 
@@ -877,7 +878,8 @@ section.info .sub .info {
 }
 
 section.info .sub .items .item .wrap-bg,
-section.info .sub .items .info .wrap-icon {
+section.info .sub .info .wrap-icon,
+section.info .sub .info .wrap-title {
     display: none;
 }
 
@@ -892,6 +894,7 @@ section.info .sub .info .bg  {
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    transition: 0.5s;
 }
 
 section.info .sub .info .wrap-title {

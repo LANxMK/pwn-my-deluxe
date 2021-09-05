@@ -220,75 +220,75 @@ $(document).ready(function() {
         themes: [
             {
                 title: 'Manticore',
-                icon: 'url(images/themes/manticore-ico.png)',
-                bg: 'url(images/themes/manticore-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/manticore-ico.png)',
+                bg: 'url(images/themes/high/manticore-screen.png)',
+                color: '#000',
             },
             {
                 title: 'Gooned',
-                icon: 'url(images/themes/gooned-ico.png)',
-                bg: 'url(images/themes/gooned-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/gooned-ico.png)',
+                bg: 'url(images/themes/high/gooned-screen.png)',
+                color: '#1C1F24',
             },
             {
                 title: 'Goon',
-                icon: 'url(images/themes/goon-ico.png)',
-                bg: 'url(images/themes/goon-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/goon-ico.png)',
+                bg: 'url(images/themes/high/goon-screen.png)',
+                color: '#2b313c',
             },
             {
                 title: 'Nord',
-                icon: 'url(images/themes/nord-ico.png)',
-                bg: 'url(images/themes/nord-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/nord-ico.png)',
+                bg: 'url(images/themes/high/nord-screen.png)',
+                color: '#3b4252',
             },
             {
                 title: 'Water',
-                icon: 'url(images/themes/water-ico.png)',
-                bg: 'url(images/themes/water-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/water-ico.png)',
+                bg: 'url(images/themes/high/water-screen.png)',
+                color: '#6c7394',
             },
             {
                 title: 'Earth',
-                icon: 'url(images/themes/earth-ico.png)',
-                bg: 'url(images/themes/earth-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/earth-ico.png)',
+                bg: 'url(images/themes/high/earth-screen.png)',
+                color: '#7f5539',
             },
             {
                 title: 'Grass',
-                icon: 'url(images/themes/grass-ico.png)',
-                bg: 'url(images/themes/grass-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/grass-ico.png)',
+                bg: 'url(images/themes/high/grass-screen.png)',
+                color: '#48786e',
             },
             {
                 title: 'Fire',
-                icon: 'url(images/themes/fire-ico.png)',
-                bg: 'url(images/themes/fire-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/fire-ico.png)',
+                bg: 'url(images/themes/high/fire-screen.png)',
+                color: '#8c5353',
             },
             {
                 title: 'Coal',
-                icon: 'url(images/themes/coal-ico.png)',
-                bg: 'url(images/themes/coal-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/coal-ico.png)',
+                bg: 'url(images/themes/high/coal-screen.png)',
+                color: '#4d4d4d',
             },
             {
                 title: 'Iron',
-                icon: 'url(images/themes/iron-ico.png)',
-                bg: 'url(images/themes/iron-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/iron-ico.png)',
+                bg: 'url(images/themes/high/iron-screen.png)',
+                color: '#cccccc',
             },
             {
                 title: 'Pudding',
-                icon: 'url(images/themes/pudding-ico.png)',
-                bg: 'url(images/themes/pudding-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/pudding-ico.png)',
+                bg: 'url(images/themes/high/pudding-screen.png)',
+                color: '#ffb947',
             },
             {
                 title: 'Cherry Pop',
-                icon: 'url(images/themes/cherry-ico.png)',
-                bg: 'url(images/themes/cherry-screen.png)',
-                color: '#fff',
+                icon: 'url(images/themes/high/cherry-ico.png)',
+                bg: 'url(images/themes/high/cherry-screen.png)',
+                color: '#ff5d34',
             },
         ],
         settings: [
@@ -297,8 +297,8 @@ $(document).ready(function() {
         ],
         managers: [{
                 title: 'Cydia',
-                icon: 'url(images/themes/manticore-ico.png)',
-                bg: 'url(images/themes/manticore-screen.png)',
+                icon: 'url(images/themes/high/manticore-ico.png)',
+                bg: 'url(images/themes/high/manticore-screen.png)',
                 color: '#fff',
             },
             {
@@ -414,9 +414,9 @@ $(document).ready(function() {
         let html = '';
         themes.map((theme) => {
             if (themeCount == 1) html += '<div class="splide__slide">';
-            html += `<div class="item theme" data-theme="${'theme' + sanearString(theme.title)}" onclick="themesSelect(); $(this).addClass('active')">
+            html += `<div class="item theme" data-theme="${sanearString(theme.title)}" onclick="themesSelect(); $(this).addClass('active')">
 	            <div class="wrap-icon"><div class="icon" style="background: ${theme.icon};"><i class="f7-icons" style="color: ${theme.color};"></i></div></div>
-                <div class="wrap-bg"><div class="bg" style="background: ${theme.bg};"><i class="f7-icons" style="color: ${theme.color};"></i></div></div>
+                <div class="wrap-bg" style="background-color: ${theme.color};"><div class="bg" style="background: ${theme.bg};"></div></div>
 	            <div class="wrap-title"><p class="title">${theme.title}</p></div>
 	        </div>`;
             if (themeCount == globalState.wrapperThemes.themesGroup) {
@@ -454,7 +454,7 @@ function themesSelect() {
 
     setTimeout(function() {
         var activeTheme = $('.sub .theme.active').attr('data-theme');
-        $(activeTheme).addClass('test')
+        $('html').removeClass().addClass(activeTheme)
         console.log(activeTheme);
         $('[data-theme=' + activeTheme + '] >').clone().appendTo( ".sub .info" );
     }, 100);
