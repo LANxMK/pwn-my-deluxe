@@ -1,6 +1,6 @@
 ![alt text](https://mks.chicken-nugget.shop/i/995pc.png)
 # pwn-my-deluxe
-iOS 14.5 WebKit/Safari based Jailbreak
+**iOS 14.5** WebKit/Safari based **Jailbreak**
 Made by RPwnage & the Manticore team
 
 # Deluxe Edition - Features
