@@ -1,50 +1,188 @@
 /* Manticore Web - DELUXE */
 
 /* Themes */
-    .Manticore {
+    .Default{
         --app-color-bg: #000000;
-        --app-color-bg-2: #1F2020;
-        --app-color-bg-3: #0D0D0D;
+        --app-color-bg-2: #1f2020;
+        --app-color-bg-3: #0c0d0d;
         --app-color-txt: #e5e5e5;
         --app-color-txt-2: #e5e5e5;
         --app-color-txt-3: #e5e5e5;
         --app-color-title: #e5e5e5;
         --app-color-border: #333333;
-        --app-color-logo: white;
+        --app-color-logo: #fff;
+        --app-color-line: white;
+        --app-color-button: #202020;
+    }
+    .Manticore {
+        --app-color-bg: #000000;
+        --app-color-bg-2: #1f2020;
+        --app-color-bg-3: #0c0d0d;
+        --app-color-txt: #e5e5e5;
+        --app-color-txt-2: #e5e5e5;
+        --app-color-txt-3: #e5e5e5;
+        --app-color-title: #e5e5e5;
+        --app-color-border: #333333;
+        --app-color-logo: #fff;
         --app-color-line: white;
         --app-color-button: #202020;
     }
 
     .Gooned {
-        --app-color-bg: #2b313c;
-        --app-color-bg-2: #444c5e;
-        --app-color-bg-3: #343a47;
-        --app-color-txt: #6c758b;
+        --app-color-bg: #1c1f24;
+        --app-color-bg-2: #262930;
+        --app-color-bg-3: #202329;
+        --app-color-txt: #505562;
         --app-color-txt-2: #abb6d1;
         --app-color-txt-3: #abb6d1;
         --app-color-title: #abb6d1;
-        --app-color-border: #444c5e;
+        --app-color-border: #5b6170;
         --app-color-logo: #abb6d1;
         --app-color-line: #abb6d1;
-        --app-color-button: #3c4352;
+        --app-color-button: #262930;
     }
 
     .Goon {
         --app-color-bg: #2b313c;
         --app-color-bg-2: #444c5e;
-        --app-color-bg-3: #343a47;
+        --app-color-bg-3: #353c4a;
         --app-color-txt: #6c758b;
-        --app-color-txt-2: #abb6d1;
-        --app-color-txt-3: #abb6d1;
+        --app-color-txt-2: #bfcceb;
+        --app-color-txt-3: #bfcceb;
         --app-color-title: #abb6d1;
-        --app-color-border: #444c5e;
-        --app-color-logo: #abb6d1;
-        --app-color-line: #abb6d1;
-        --app-color-button: #3c4352;
+        --app-color-border: #6d768c;
+        --app-color-logo: #bfcceb;
+        --app-color-line: #bfcceb;
+        --app-color-button: #444c5e;
     }
 
+    .Nord {
+        --app-color-bg: #3b4252;
+        --app-color-bg-2: #4c566a;
+        --app-color-bg-3: #424a5c;
+        --app-color-txt: #cccccc;
+        --app-color-txt-2: #cccccc;
+        --app-color-txt-3: #cccccc;
+        --app-color-title: #cccccc;
+        --app-color-border: #7d828e;
+        --app-color-logo: #cccccc;
+        --app-color-line: #cccccc;
+        --app-color-button: #4c566a;
+    }
+
+    .Water {
+        --app-color-bg: #6c7394;
+        --app-color-bg-2: #8189b0;
+        --app-color-bg-3: #747c9f;
+        --app-color-txt: #dae2fc;
+        --app-color-txt-2: #dae2fc;
+        --app-color-txt-3: #dae2fc;
+        --app-color-title: #ecf0fc;
+        --app-color-border: #99a2d0;
+        --app-color-logo: #f0f3fd;
+        --app-color-line: #e6d2b2;
+        --app-color-button: #8189b0;
+    }
+
+    .Earth {
+        --app-color-bg: #7f5539;
+        --app-color-bg-2: #9e6947;
+        --app-color-bg-3: #8b5d3f;
+        --app-color-txt: #e6ccb2;
+        --app-color-txt-2: #e6ccb2;
+        --app-color-txt-3: #e6ccb2;
+        --app-color-title: #e6ccb2;
+        --app-color-border: #bb9172;
+        --app-color-logo: #e6ccb2;
+        --app-color-line: #e6ccb2;
+        --app-color-button: #9e6947;
+    }
+
+    .Grass {
+        --app-color-bg: #48786e;
+        --app-color-bg-2: #579185;
+        --app-color-bg-3: #4e8277;
+        --app-color-txt: #90ab97;
+        --app-color-txt-2: #f5e8dc;
+        --app-color-txt-3: #90ab97;
+        --app-color-title: #f5e8dc;
+        --app-color-border: #90ab97;
+        --app-color-logo: #8bb5a1;
+        --app-color-line: #8bb5a1;
+        --app-color-button: #579185;
+    }
+
+    .Fire {
+        --app-color-bg: #8c5353;
+        --app-color-bg-2: #a66262;
+        --app-color-bg-3: #965959;
+        --app-color-txt: #e6beb2;
+        --app-color-txt-2: #e6beb2;
+        --app-color-txt-3: #e6beb2;
+        --app-color-title: #e8c3b8;
+        --app-color-border: #bc8d80;
+        --app-color-logo: #a66262;
+        --app-color-line: #a66262;
+        --app-color-button: #a66262;
+    }
+
+    .Coal {
+        --app-color-bg: #4d4d4d;
+        --app-color-bg-2: #cccccc;
+        --app-color-bg-3: #808080;
+        --app-color-txt: #e8e8e8;
+        --app-color-txt-2: #333333;
+        --app-color-txt-3: #333333;
+        --app-color-title: #e5e5e5;
+        --app-color-border: #333333;
+        --app-color-logo: white;
+        --app-color-line: white;
+        --app-color-button: #cccccc;
+    }
+
+    .Iron {
+        --app-color-bg: #cccccc;
+        --app-color-bg-2: #fff;
+        --app-color-bg-3: #ebebeb;
+        --app-color-txt: #333333;
+        --app-color-txt-2: #333333;
+        --app-color-txt-3: #333333;
+        --app-color-title: #333333;
+        --app-color-border: #fff;
+        --app-color-logo: #666666;
+        --app-color-line: #333333;
+        --app-color-button: #ebebeb;
+    }
+
+    .Pudding {
+        --app-color-bg: #ffb947;
+        --app-color-bg-2: #ff8134;
+        --app-color-bg-3: #e87233;
+        --app-color-txt: #7a4339;
+        --app-color-txt-2: #7a4339;
+        --app-color-txt-3: #7a4339;
+        --app-color-title: #7a4339;
+        --app-color-border: #7a4339;
+        --app-color-logo: #7a4339;
+        --app-color-line: #7a4339;
+        --app-color-button: #ff8134;
+    }
 
     .CherryPop {
+        --app-color-bg: #ff5d34;
+        --app-color-bg-2: #ffb947;
+        --app-color-bg-3: #dc9f44;
+        --app-color-txt: #ffb947;
+        --app-color-txt-2: #7a4339;
+        --app-color-txt-3: #7a4339;
+        --app-color-title: #ffb947;
+        --app-color-border: #7a4339;
+        --app-color-logo: #ffb947;
+        --app-color-line: #ffb947;
+        --app-color-button: #ffb947;
+    }
+
+    .Sus {
         --app-color-bg: #942a2a;
         --app-color-bg-2: #d54242;
         --app-color-bg-3: #b93737;
@@ -56,34 +194,6 @@
         --app-color-logo: #eb4d4d;
         --app-color-line: #eb4d4d;
         --app-color-button: #b93737;
-    }
-
-    .Coal {
-        --app-color-bg: #4d4d4d;
-        --app-color-bg-2: #cccccc;
-        --app-color-bg-3: #666666;
-        --app-color-txt: #e5e5e5;
-        --app-color-txt-2: #333333;
-        --app-color-txt-3: #333333;
-        --app-color-title: #e5e5e5;
-        --app-color-border: #333333;
-        --app-color-logo: white;
-        --app-color-line: white;
-        --app-color-button: #cccccc;
-    }
-
-    .Iron {
-        --app-color-bg: #ffffff;
-        --app-color-bg-2: #cccccc;
-        --app-color-bg-3: #ebebeb;
-        --app-color-txt: #666666;
-        --app-color-txt-2: #333333;
-        --app-color-txt-3: #333333;
-        --app-color-title: #333333;
-        --app-color-border: #cccccc;
-        --app-color-logo: #666666;
-        --app-color-line: #333333;
-        --app-color-button: #ebebeb;
     }
 /* */
 
@@ -376,7 +486,7 @@ body.home section.header .title h1 {
 
 section.content {
     position: relative;
-    height: 400px;
+    height: 100%;
     width: calc(100% - 24px);
 }
 
@@ -484,12 +594,12 @@ body.home section.info {
 }
 
 section.info {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background: transparent;
     width: calc(100% - 20%);
     height: fit-content;
-    transform: translateY(60vw);
+    transform: translateY(0vw);
 }
 
 section.info .comp {
@@ -534,7 +644,7 @@ section.info .options > section {
     display: flex;
     position: relative;
     flex-direction: row;
-    height: calc(100% - 24px);
+    height: 100%;
     min-width: 100%;
     align-items: center;
     justify-content: center;
@@ -544,7 +654,7 @@ section.info .options > section > .wrap {
     display: flex;
     position: relative;
     flex-direction: column;
-    height: calc(100% - 48px);
+    height: 100%;
     width: 100%;
 }
 
@@ -580,13 +690,20 @@ section.info .options .sub.active {
 }
 
 body:not(.options) section.info .options > section .head {
-    transform: translateY(-24px);
+    transform: translateY(0px);
 }
 
 section.info .comp .head {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--app-color-txt-3);
+    font-weight: 800;
+    font-size: 1.3em;
     margin: 12px 0;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 section.info .comp .content {
@@ -599,12 +716,12 @@ section.info .comp .content {
 }
 
 section.info .options .head {
-    height: 50px;
+    height: fit-content;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--app-color-txt-2);
+    color: var(--app-color-title);
     font-weight: 800;
     font-size: 1.3em;
     margin: 12px 0;
@@ -612,7 +729,6 @@ section.info .options .head {
 }
 
 section.info .options.active .head {
-    margin: 0px 0 6px;
     height: 50px;
     width: 160px;
     display: flex;
@@ -632,6 +748,7 @@ section.info .options .head .button {
     height: 35px;
     width: 120px;
     transition: 0.65s;
+    color: var(--app-color-title);
 }
 
 section.info .options.active .head .button {
@@ -647,6 +764,7 @@ section.info .options i {
     font-weight: 900;
     line-height: unset;
     transition: 0.5s;
+    color: var(--app-color-title);
 }
 
 section.info .options.active i {
@@ -667,8 +785,17 @@ section.info .content {
     align-items: center;
     justify-content: flex-start;
     opacity: 0;
+    overflow: scroll;
     transition: 0.5s;
     flex-wrap: nowrap;
+}
+
+section.info .content .wrap {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.info .options.active .content {
@@ -693,71 +820,81 @@ section.info .top .title {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    color: var(--app-color-txt-8)
+    color: var(--app-color-txt-3)
 }
 section.info .top {
     position: relative;
     background: var(--app-color-bg-2);
     border-radius: 12px;
     width: 80%;
-    height: fit-content;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
     margin-bottom: 12px;
 }
 
 section.info .top .items {
-    height: 115px;
-    width: calc(var(--app-width) - 25%);
+    height: 14vw;
+    width: 100%;
+    margin: 8px 0;
+    margin-bottom: 22px;
+}
+
+section.info .top .items .item {
+    position: relative;
+    height: 14vw;
+    width: 14vw;
+    transform: scale(1);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 section.info .top .items .item .wrap-icon {
     position: relative;
-    height: 64px;
-    width: 64px;
-    transform: scale(1);
-    transition: 0.5s;
-}
-
-
-section.info .top .items .item .wrap-icon::before {
-    content: '';
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: calc(100% - 6px);
-    width: calc(100% - 6px);
-    border-radius: 15px;
-    border: 3px solid rgba(255, 255, 255, 0);
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-
-section.info .top .items .item.active .wrap-icon::before {
-    content: '';
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    height: calc(110% - 6px);
-    width: calc(110% - 6px);
-    border-radius: 20px;
-    border: 3px solid white;
+    height: 14vw;
+    width: 14vw;
+    border-radius: 4vw;
+    transform: scale(0.9);
+    transform-origin: center;
+    border: 1vw solid rgba(255, 255, 255, 0);
     transition: 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-section.info .top .items .item .wrap-icon .icon{
+section.info .top .items .item.active .wrap-icon {
     position: relative;
-    background-size: contain !important;
+    height: 14vw;
+    width: 14vw;
+    border-radius: 4vw;
+    transform: scale(0.9);
+    transform-origin: center;
+    border: 1vw solid white;
+    transition: 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+section.info .top .items .item .wrap-icon .icon {
+    position: relative; 
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center;
-    border-radius: 16px;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
+    transform: scale(1.1);
+    transform-origin: center;
+    height: 14vw;
+    width: 14vw;
     z-index: 99;
-    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 3vw;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
@@ -838,7 +975,7 @@ section.info .section .wrap-title {
 
 section.info .section .wrap-title .title {
     font-size: 0.75em;
-    color: var(--app-color-txt-2);
+    color: var(--app-color-txt-3);
     font-weight: 600;
 }
 
@@ -894,7 +1031,13 @@ section.info .sub .info .bg  {
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    animation: 0.3s opacity;
     transition: 0.5s;
+}
+
+section.info .sub .info .bg  {
+    opacity: 0;
+    animation: 0.5s 0.2s opacity forwards;
 }
 
 section.info .sub .info .wrap-title {
@@ -914,18 +1057,18 @@ section.info .sub .info .wrap-title {
 }
 
 .splide__track {
+    overflow: visible !Important;
     position: relative;
     z-index: 0;
+    width: var(--options-top-width) !important;
     height: 100%;
-    width: calc(var(--app-width) - 25%);
-    bottom: 6px;
 }
 
 .splide__list {
     position: relative;
     display: flex;
     height: 100%;
-    width: calc(var(--app-width) - 25%);
+    width: var(--options-top-width) !important;
     justify-content: flex-start;
 }
 
@@ -936,13 +1079,14 @@ section.info .sub .info .wrap-title {
     flex-direction: row;
     align-items: center;
     gap: 12px;
+    width: var(--options-top-width) !important;
     justify-content: center;
 }
 
 .splide__pagination {
     position: absolute;
     z-index: 1;
-    bottom: .5em;
+    bottom: -22px !important;
     left: 50%;
     transform: translateX(-50%);
     padding: 0;
@@ -950,3 +1094,8 @@ section.info .sub .info .wrap-title {
 .splide__arrows {
     display: none;
 }
+
+@keyframes opacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+} 

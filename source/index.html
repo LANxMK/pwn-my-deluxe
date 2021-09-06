@@ -1,8 +1,8 @@
-<html class="Manticore">
+<html class="Default">
 <head>
 	<title>Manticore</title>
 	<meta charset='UTF-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link rel="apple-touch-icon" sizes="167x167" href="images/manticore-icon.png">
@@ -59,31 +59,33 @@
 							<div class="button"><i class="f7-icons">chevron_left</i><p>Options</p></div>
 						</div>
 						<div class="content">
-							<div class="top">
-								<div class="title"><p>Package Management</p></div>
-								<div class="items">
-									<div class="splide">
-										<div class="splide__track">
-											<ul class="splide__list">
-												<li class="splide__slide">
-													<div class="item manager" data-manager="managerCydia">
-														<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
-														<div class="wrap-title"><p class="title">Cydia</p></div>
-													</div>
-													<div class="item manager active" data-manager="managerSileo">
-														<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
-														<div class="wrap-title"><p class="title">Sileo</p></div>
-													</div>
-													<div class="item manager" data-manager="managerZebra">
-														<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
-														<div class="wrap-title"><p class="title">Zebra</p></div>
-													</div>
-													<div class="item manager" data-manager="managerSaily">
-														<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
-														<div class="wrap-title"><p class="title">Saily</p></div>
-													</div>
-												</li>
-											</ul>
+							<div class="wrap">
+								<div class="top">
+									<div class="title"><p>Package Management</p></div>
+									<div class="items">
+										<div class="splide">
+											<div class="splide__track">
+												<ul class="splide__list">
+													<li class="splide__slide">
+														<div class="item manager" data-manager="managerCydia">
+															<div class="wrap-icon"><div class="icon" style="background: url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Cydia_logo.png')"></div></div>
+															<div class="wrap-title"><p class="title">Cydia</p></div>
+														</div>
+														<div class="item manager active" data-manager="managerSileo">
+															<div class="wrap-icon"><div class="icon" style="background: url('https://getsileo.app/img/icon.png')"></div></div>
+															<div class="wrap-title"><p class="title">Sileo</p></div>
+														</div>
+														<div class="item manager" data-manager="managerZebra">
+															<div class="wrap-icon"><div class="icon" style="background: url('https://getzbra.com/assets/zeeb.svg')"></div></div>
+															<div class="wrap-title"><p class="title">Zebra</p></div>
+														</div>
+														<div class="item manager" data-manager="managerSaily">
+															<div class="wrap-icon"><div class="icon" style="background: url('https:/sailyteam.github.io/img/icon.png')"></div></div>
+															<div class="wrap-title"><p class="title">Saily</p></div>
+														</div>
+													</li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -119,6 +121,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script type="text/javascript" src="/js/exploits/14.5.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>

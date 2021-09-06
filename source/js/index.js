@@ -83,7 +83,6 @@ const appHeight = () => {
 window.addEventListener("resize", appHeight);
 appHeight();
 
-
 // window.onload = () => {
 //	//force redirect to https
 //	if (window.location.protocol !== "https:") {
@@ -92,10 +91,11 @@ appHeight();
 // }
 
 $(document).ready(function() {
-
     console.log("document loaded");
     $("section.header").addClass('load');
 
+    console.log("Loading Theme");
+    themesLoad()
     // prep-start
     setTimeout(function() {
         $("body").addClass('start');
@@ -150,6 +150,9 @@ $(document).ready(function() {
         $('body').addClass("options");
         $('section.header').addClass('hidden');
         $('section.content').addClass('hidden');
+        setTimeout(function() {
+            $('html').css("--options-top-width", `${$('.top .items').innerWidth()}px`);
+        }, 500);
     });
 
     /* tap - open */
@@ -165,11 +168,15 @@ $(document).ready(function() {
 
     /* swipe - close */
     $('section.info .options').swipedown(function(e) {
-        console.log('swiped down .options');
-        $('section.info .options').removeClass("active");
-        $('body').removeClass("options");
-        $('section.header').removeClass('hidden');
-        $('section.content').removeClass('hidden');
+        if($("section.info section .wrap > .content .wrap:hover").length != 0){
+            console.log('swiped down .options');
+            $('section.info .options').removeClass("active");
+            $('body').removeClass("options");
+            $('section.header').removeClass('hidden');
+            $('section.content').removeClass('hidden');
+        } else{
+            console.log('Swiped outside');
+        }
     });
 
     $('section.info .options .main .head .button').bind('click', function(ev) {
@@ -187,8 +194,6 @@ $(document).ready(function() {
     });
 
     $('section.info .options .sub').swiperight(function(e) {
-            //ignore swipe when scrolling through items
-
         if($("section.info .options .sub .items:hover").length != 0){
             console.log("Swiped inside, ingnoring");
         } else{
@@ -379,7 +384,7 @@ $(document).ready(function() {
         settings.map((setting) => {
             html += `<div class="section ${setting.area}"></div>`;
         })
-        $('section.info .options .main .content').append(html);
+        $('section.info .options .main .content .wrap').append(html);
     };
 
     //Set sub-category items - options
@@ -434,6 +439,11 @@ $(document).ready(function() {
     function sanearString(string) {
         return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '');
     };
+
+setTimeout(function() {
+    new Splide( '.main .splide' ).mount();
+    new Splide( '.sub .splide' ).mount();
+}, 800);
 });
 
 // Options button functionality
@@ -450,16 +460,50 @@ function themesSelect() {
         $('section.info .items .item').removeClass('active');
     };
 
+
     $('.sub .info').html('');
 
     setTimeout(function() {
         var activeTheme = $('.sub .theme.active').attr('data-theme');
         $('html').removeClass().addClass(activeTheme)
         console.log(activeTheme);
-        $('[data-theme=' + activeTheme + '] >').clone().appendTo( ".sub .info" );
-    }, 100);
+        $('[data-theme=' + activeTheme + '] .wrap-bg').clone().appendTo(".sub .info");
+        themesLog();
+        Cookies.set('theme', activeTheme);
+    }, 300);
 };
-setTimeout(function() {
-    new Splide( '.main .splide' ).mount();
-    new Splide( '.sub .splide' ).mount();
-}, 100);
+function themesLoad() {
+    $('html').removeClass(':not(".Default")').addClass(Cookies.get('theme'));
+    themesLog()
+};
+function themesLog() { 
+    //Check theme on load
+        var activeTheme = $('html').attr('class');
+        var activeThemeBg = $('.' + activeTheme).css("--app-color-bg");
+        var activeThemeColor = $('.' + activeTheme).css("--app-color-title");
+        var activeThemeBorder = $('.' + activeTheme).css("--app-color-border");
+        var activeThemeIcon = 'url(images/themes/high/' + lowerCase(activeTheme) +'-ico.png)';
+        
+    
+        var ThemeLog= [
+            'font-family: Inter',
+            'font-weight: 600',
+            'background-color:'+ activeThemeBg,
+            'background-image: '+ activeThemeIcon,
+            'background-repeat: no-repeat',
+            'background-size: 100px',
+            'color:' + activeThemeColor,
+            'font-size: 3em',
+            'padding: 12px 12px',
+            'margin: 12px 12px',
+            'border: 3px solid' + activeThemeBorder,
+            'border-radius: 12px',
+            'line-height: 35px'
+        ].join(';');
+    
+        console.log('\ntheme selected:\n%c'+activeTheme, ThemeLog, '\nShort Info:', '\ncurrent active theme: ' + activeTheme, '\ncurrent active theme color: ' + activeThemeColor, '\ncurrent active theme border: ' + activeThemeBorder, '\ncurrent active theme icon: ' + activeThemeIcon);
+
+        function lowerCase(string) {
+            return string.charAt(0).toLowerCase() + string.slice(1);
+        };
+};
